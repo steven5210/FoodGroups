@@ -1,0 +1,10 @@
+  <div ng-controller="foodgroupsController as FGC">
+  	<body>
+  	<h2>What do you like talking about the most?</h2>
+<input type="text" name="interest_1" ng-model="FGC.yourinterests[0]" ng-show="FGC.interests => 0">
+<input type="text" name="interest_2" ng-model="FGC.yourinterests[1]" ng-show="FGC.interests > 0">
+<input type="text" name="interest_3" ng-model="FGC.yourinterests[2]" ng-show="FGC.interests > 1">
+<a ng-click="FGC.addinterest()">Show additional interests</a>
+<button ng-click="FGC.uploadinterests()">Click here to upload your interests</button>
+</body>
+ </div>
