@@ -30,6 +30,9 @@ foodgroups_app.config(function ($routeProvider) {
         .when('/groups',{
             templateUrl: 'partials/groups.html'
         })
+        .when('/group/:id', {
+            templateUrl: 'partials/group_page.html'
+        })
         .otherwise({
           redirectTo: '/'
         });

@@ -6,7 +6,14 @@ foodgroups_app.factory('groupsFactory', function ($http) {
 			})
 		},
 		addGroup: function (newGroup, callback) {
-			$http.post('new_group', newGroup);
+			$http.post('new_group', newGroup).then(function (data) {
+				callback(data.data);
+			});
+		},
+		findGroup: function (id, callback) {
+			$http.get('find_group/' + id).then(function (data) {
+				callback(data.data);
+			}) 
 		}
 	}
 })

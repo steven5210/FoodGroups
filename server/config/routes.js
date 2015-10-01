@@ -10,6 +10,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 var users = require('../controller/users.js')(connection);
+var groups = require('../controller/groups.js') (connection);
 
 module.exports = function (app) {
 	app
@@ -23,9 +24,12 @@ module.exports = function (app) {
 	
 	//groups
 	.post('/new_group', function (req, res) {
-		console.log(req.body);
+		groups.add(req, res);
 	})
 	.get('/show_groups', function (req, res) {
-		groups.add(req, res);
+		groups.show(req, res);
+	})
+	.get('/find_group/:id', function (req, res) {
+		groups.find(req, res);
 	})
 };

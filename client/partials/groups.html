@@ -10,7 +10,7 @@
 	</p>
 	<ul>
 		<li ng:repeat="group in grpCtrl.allGroups">
-			<a href="#/group/{{group.id}}"><h1 ng:bind="group.name"></h1></a>
+			<a href="#/group/{{group.id}}" ng:click="grpCtrl.findGroup(group.id)"><h1 ng:bind="group.name"></h1></a>
 			<p ng:bind="group.content"></p>
 		</li>
 	</ul>
