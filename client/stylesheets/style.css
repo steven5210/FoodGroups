@@ -1,0 +1,11 @@
+body { 
+    padding-top: 65px; 
+}
+#map { 
+  height: 400px; 
+  width: 400px; 
+}
+.small_profile_pic {
+	width: 5%;
+	height:5%;
+}

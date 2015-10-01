@@ -1,0 +1,20 @@
+  <div ng-controller="foodgroupsController as FGC">
+  	<body>
+  	<h2>What kinds of food are you interested in eating? Do you have any dietary concerns?</h2>
+
+  	  <form action="#/registration3">
+  	  	<h3>Favorite cuisine</h3>
+<input type="text" name="food_1" ng-show="FGC.foods => 0"><br>
+<input type="text" name="food_2" ng-show="FGC.foods > 0"><br>
+<input type="text" name="food_3" ng-show="FGC.foods > 1"><br>
+<a ng-click="FGC.addfood()">add another favorite food</a>
+<h3>Dietary Restrictions</h3>
+<input type="text" name="diet_1" ng-show="FGC.diet => 0"><br>
+<input type="text" name="diet_2" ng-show="FGC.diet > 0"><br>
+<input type="text" name="diet_3" ng-show="FGC.diet > 1"><br>
+<a ng-click="FGC.adddiet()">add another dietary restriction</a>
+<input type="submit">
+
+</form>
+</body>
+ </div>
