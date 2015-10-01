@@ -12,6 +12,9 @@ foodgroups_app.config(function ($routeProvider, $httpProvider ,authProvider, jwt
         .when('/',{
             templateUrl: 'partials/welcome.html'
         })
+        .when('/registration0',{
+            templateUrl: 'partials/registration0.html'
+         })
         .when('/registration1',{
             templateUrl: 'partials/registration1.html'
         })
@@ -29,6 +32,9 @@ foodgroups_app.config(function ($routeProvider, $httpProvider ,authProvider, jwt
         })
         .when('/user', {
             templateUrl: 'partials/user_profile.html'
+        })
+        .when('/group/:id', {
+            templateUrl: 'partials/group_page.html'
         })
         .otherwise({
           redirectTo: '/'
