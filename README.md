@@ -1,5 +1,5 @@
 # FoodGroups
-Eating with Strangers
+Eating with Strangers while sharing common interests!
 
 
 THis app does something.
