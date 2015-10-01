@@ -1,8 +1,10 @@
 foodgroups_app.controller('foodgroupsController', function(foodFactory) {
+
 var that = this;
 	this.interests = 0;
 	this.foods = 0;
 	this.diet=0;
+
     this.hello = function(){
     console.log('hello');
     },

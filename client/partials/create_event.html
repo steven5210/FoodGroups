@@ -1,0 +1,23 @@
+<div ng-controller='create_group as CG'>
+<h4>Create A Group</h4>
+
+	<form>
+		<div class='form-group'>
+			<label for="exampleInputEmail1">Group Name</label>
+			<input type="text" class="form-control" id="group_name" placeholder="Group Name" ng-model='CG.newGroup.name'>
+	  </div>
+	  <div class="form-group">
+	    <label for="Description">Group Description</label>
+	    <input type="text" class="form-control" id="description" placeholder="Description" ng-model='CG.newMember.description'>
+	  </div>
+	  <div class='form-group'>
+	  	<label for="add_member">Add a Member</label>
+	  	<input type='text' class='form-control' id='description' placeholder='Search for a user...' ng-model='CG.newMember.name'>
+	  <input type='submit' ng-click='CG.newGroup()'>
+	</form>
+	<ul class='list-unstyled'>
+		<h4>Members currently in the Group</h4>
+		<li>John<img src="http://orig04.deviantart.net/aded/f/2013/066/c/2/profile_picture_by_naivety_stock-d5x8lbn.jpg" height='42' width='42'></li>
+		<li>It's Johnny!<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQl1_oOQyzRX7VuWJNUm4Vxmz9fy8E7E4Kk_1yWRHp0NzZ0C9BGuA" height='42' width='42'></li>
+	</ul>
+</div>

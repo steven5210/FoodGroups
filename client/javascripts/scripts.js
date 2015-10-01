@@ -14,7 +14,7 @@ foodgroups_app.config(function ($routeProvider) {
         })
         .when('/registration0',{
             templateUrl: 'partials/registration0.html'
-        })
+         })
         .when('/registration1',{
             templateUrl: 'partials/registration1.html'
         })
@@ -26,6 +26,9 @@ foodgroups_app.config(function ($routeProvider) {
         })
         .when('/mainpage',{
             templateUrl: 'partials/mainpage.html'
+        })
+        .when('/groups',{
+            templateUrl: 'partials/groups.html'
         })
         .otherwise({
           redirectTo: '/'
