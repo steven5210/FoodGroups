@@ -6,5 +6,9 @@ foodgroups_app.controller('groupsController', function(groupsFactory) {
 		})
 	}
 	getAllGroups();
-
+	that.addGroup = function() {
+		groupsFactory.addGroup(that.newGroup, function (data) {
+			console.log(data);
+		})
+	}
 })
