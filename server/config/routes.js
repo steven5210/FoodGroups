@@ -10,6 +10,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 var users = require('../controller/users.js')(connection);
+var user = require('../controller/user.js')(connection);
 
 module.exports = function (app) {
 	app
@@ -18,5 +19,9 @@ module.exports = function (app) {
 	})
 	.get('/show_groups', function (req, res) {
 		console.log('in route');
+	})
+	//get a specific user for profile page
+	.get('/user', function(req, res){
+		user.show(req, res);
 	})
 };
