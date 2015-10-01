@@ -1,4 +1,15 @@
-<div ng:controller="groupsController as grpView">
-<h1>{{grpView}}</h1>	
 
-</div>
+
+<h1 ng:bind="grpCtrl.group.name"></h1>	
+<p ng:bind="grpCtrl.group.content"></p>
+
+<p>Date:</p> 
+<input type="date" ng:model="grpCtrl.newGroupEvnt.date">
+<p>Restaurant:</p> 
+<input type="text" ng:model="grpCtrl.newGroupEvnt.restaurant">
+<p>Description:</p>
+<textarea ng:model="grpCtrl.newGroupEvnt.description"></textarea>
+<p>
+<input type="submit" ng:click="grpCtrl.addEvnt(grpCtrl.group.id)">
+</p>
+

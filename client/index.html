@@ -13,7 +13,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script>
   <!--Google Maps-->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTFbAShs-Vid1qTYfGxXzJgMJAVHM8vMs&libraries=places"></script>
-  
+
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
   <!--App Module-->
 	<script src="./javascripts/scripts.js"></script>
 
@@ -24,11 +27,8 @@
   <!--controllers-->
 	<script src="./javascripts/controllers/foodController.js"></script>
   <script src="./javascripts/controllers/groupsController.js"></script>
-  <!--JQuery-->
-	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'>
-      </script>
-  <!--Bootstrap-->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  
+
   <!--Css-->
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
@@ -57,9 +57,12 @@
           </form>
         </div><!--/.navbar-collapse -->
       </div>
-    </nav>
-	<div ng:view>
-		
+    </nav>  
+  <div ng:controller="groupsController as grpCtrl">
+    <div ng:view>
+  
+      
+    </div>
 	</div>
 </body>
 </html>

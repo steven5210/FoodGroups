@@ -12,8 +12,13 @@ foodgroups_app.factory('groupsFactory', function ($http) {
 		},
 		findGroup: function (id, callback) {
 			$http.get('find_group/' + id).then(function (data) {
-				callback(data.data);
+				callback(data.data[0]);
 			}) 
+		},
+		addEvent: function (evnt, callback) {
+			$http.post('add_event', evnt).then(function (data) {
+				callback(data.data);
+			})
 		}
 	}
 })

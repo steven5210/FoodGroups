@@ -22,10 +22,16 @@ module.exports = function (connection) {
 			var groupId = req.params.id;
 				console.log(groupId);
 			var sql = 'SELECT * FROM groups WHERE id = ' + connection.escape(groupId);
-			console.log(sql);
 			connection.query(sql, function (err, results) {
-				res.send(results);
+				res.json(results);
 			})
+		},
+		addEvnt: function (req, res) {
+			var evnt = req.body;
+			var query = connection.query('INSERT INTO events SET ?', evnt, function (err, results) {
+
+			})
+			console.log(query);
 		}
 
 	}
