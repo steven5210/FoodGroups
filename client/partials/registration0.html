@@ -1,5 +1,5 @@
-  <div ng-controller="foodgroupsController as FGC">
-  	<body>
+
+  	<div class='container'>
   		<div ng-hide="FGC.hide">
   	<h2>Please enter your name</h2>
 <input type="text" ng-model="FGC.user.first_name" placeholder="first name">
@@ -13,7 +13,7 @@
   	<input type="text" ng-model="FGC.yourinterests[0]">
 <input type="text" ng-model="FGC.yourinterests[1]">
 <input type="text" ng-model="FGC.yourinterests[2]" >
-<button ng-click="FGC.uploadinterests()">Click here to upload your interests</button>
+<button class='btn btn-success' ng-click="FGC.uploadinterests()">Click here to upload your interests</button>
 </body>
 </div>
 
@@ -22,7 +22,7 @@
 <input type="text" name="food_1" ng-model="FGC.yourdiets[0]" placeholder="I love food trucks"><br>
 <input type="text" name="food_2" ng-model="FGC.yourdiets[1]" placeholder="Ovo-lacto vegetarian"><br>
 <input type="text" name="food_3" ng-model="FGC.yourdiets[2]" placeholder="Happy Hour!"><br>
-<input type="submit" ng-click="FGC.uploaddiets()">
+<input type="submit" class='btn btn-success' ng-click="FGC.uploaddiets()">
  </div>
 
 

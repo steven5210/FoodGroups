@@ -3,7 +3,7 @@ module.exports = function (connection) {
 		add: function (req, res) {
 			var user = {first_name: req.body.given_name, 
 						last_name: req.body.family_name,
-						facebook_id: req.body.user_id,
+						facebookID: req.body.user_id,
 						profile_pic: req.body.picture,
 						created_at: new Date(),
 						updated_at: new Date()
@@ -16,11 +16,13 @@ module.exports = function (connection) {
 		},
 		find: function(req, res){
 			var facebookId = req.params.id;
-			var sql = 'SELECT * FROM users WHERE facebook_id = ' +facebookId;
-			var query = connection.query(sql, function(err, rows,results){
+			console.log(facebookId);
+			var sql = 'SELECT * FROM users WHERE facebookID = facebook|10104528221459798';
+			console.log(sql);
+			var query = connection.query(sql, function(err, results){
+				console.log(results);
 				res.json(results);
 			})
-			console.log(sql)
 		},
 		addinterests: function (req, res) {
 			console.log("came to model");
