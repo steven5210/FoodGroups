@@ -17,7 +17,7 @@
 <div class="scroll_view">
 	
 	<ul>
-		<li ng:repeat="group in grpCtrl.allGroups | filter: filter_name">
+		<li ng:repeat="group in grpCtrl.allGroups | filter: filter_name | orderBy: -group.created_at ">
 			<a href="#/group/{{group.id}}" ng:click="grpCtrl.findGroup(group.id)"><h1 ng:bind="group.name"></h1></a>
 			<p ng:bind="group.content"></p>
 		</li>

@@ -27,12 +27,13 @@ body {
 }
 .scroll_view {
 	display: inline-block;
+	height: 100vh;
 	overflow: scroll;
 }
 .scroll_view ul li {
 	list-style-type: none;
 	height: 150px;
-	width: 900px;
+	width: 70vw;
 	border: 3px solid black;
 	margin-top: 15px;
 	border-radius: 3px;

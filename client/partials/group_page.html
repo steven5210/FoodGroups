@@ -26,9 +26,10 @@
 </div>
 <div class="scroll_view">
 	<ul>
-		<li ng:repeat="events in grpCtrl.allEvents | filter: filter_name">
+		<li ng:repeat="events in grpCtrl.allEvents | filter: filter_name | orderBy: -'events.created_at'">
 			<h2 ng:bind="events.restaurant"></h2>
 			<p ng:bind="events.description"></p>
+			<p ng:bind="events.created_at"></p>
 		</li>
 	</ul>
 </div>
