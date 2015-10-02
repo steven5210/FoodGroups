@@ -1,8 +1,10 @@
 module.exports = function (connection) {
 	return {
 		add: function (req, res) {
-			var user = {first_name: req.body.first_name, 
-						last_name: req.body.last_name,
+			var user = {first_name: req.body.given_name, 
+						last_name: req.body.family_name,
+						facebook_id: req.body.user_id,
+						profile_pic: req.body.picture,
 						created_at: new Date(),
 						updated_at: new Date()
 						}
