@@ -1,7 +1,7 @@
 foodgroups_app.factory('userFactory', function($http){
 	return {
-		getUser: function(callback){
-			$http.get('/user').then(function(response){
+		getUser: function(profile,callback){
+			$http.get('/user/' + profile.user_id).then(function(response){
 				callback(response);
 			})
 		},

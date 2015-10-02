@@ -6,9 +6,12 @@ foodgroups_app.controller('loginController', function(userFactory, $http, auth, 
 			//success callback
 			store.set('profile', profile);
 			store.set('token', token);
+			userFactory.getUser(profile, function(data){
+
+			})
 			userFactory.addUser(profile, function (data){
 			})
-			$location.path('/user');
+			// $location.path('/user');
 		}, function(){
 			//Error callback
 		})

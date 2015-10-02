@@ -8,10 +8,18 @@ body {
 .small_profile_pic {
 	width: 5%;
 	height:5%;
+	padding: 0px;
 }
 .groups{
 	padding: 10px;
 }
+
+.regular_profile_pic {
+	width: 10%;
+	padding: 0px;
+	margin: 0px;
+}
+
 .event {
 	display: inline-block;
 	vertical-align: top;
@@ -29,9 +37,9 @@ body {
 	margin-top: 15px;
 	border-radius: 3px;
 }
+
 .heading {
 	text-align: center;
-}
-.description {
 	
 }
+

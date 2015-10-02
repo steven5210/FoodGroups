@@ -48,9 +48,9 @@ module.exports = function (app) {
 	.get('/show_events/:id', function (req, res) {
 		groups.showEvents(req, res)
 	})
-	//get a specific user for profile page
-	.get('/user', function(req, res){
-		user.show(req, res);
+	//checks to see if user exists in DB
+	.get('/user/:id', function(req, res){
+		users.find(req, res);
 	})
 	.post('/new_user', function(req, res){
 		users.add(req, res);
