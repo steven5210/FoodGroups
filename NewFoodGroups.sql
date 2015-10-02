@@ -55,8 +55,11 @@ CREATE TABLE `events` (
   `picture` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `groups_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_events_groups1_idx` (`groups_id`),
+  CONSTRAINT `fk_events_groups1` FOREIGN KEY (`groups_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,6 +68,7 @@ CREATE TABLE `events` (
 
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
+INSERT INTO `events` VALUES (4,'0000-00-00 00:00:00','aefa','aefaef',NULL,'2015-10-01 23:04:08','2015-10-01 23:04:08',1),(5,'0000-00-00 00:00:00','aefa','aefaef',NULL,'2015-10-01 23:04:08','2015-10-01 23:04:08',1),(6,'2015-10-13 07:00:00','Sashimi','sushi',NULL,'2015-10-01 23:06:40','2015-10-01 23:06:40',1),(7,'2015-10-13 07:00:00','Sashimi','sushi',NULL,'2015-10-01 23:06:40','2015-10-01 23:06:40',1);
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,7 +86,7 @@ CREATE TABLE `groups` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,6 +95,7 @@ CREATE TABLE `groups` (
 
 LOCK TABLES `groups` WRITE;
 /*!40000 ALTER TABLE `groups` DISABLE KEYS */;
+INSERT INTO `groups` VALUES (1,'Japanese','Sushi','2015-10-01 15:46:29','2015-10-01 15:46:29');
 /*!40000 ALTER TABLE `groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,12 +165,9 @@ CREATE TABLE `messages` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `events_id` int(11) NOT NULL,
-  `groups_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`,`groups_id`),
+  PRIMARY KEY (`id`),
   KEY `fk_messages_events1_idx` (`events_id`),
-  KEY `fk_messages_groups1_idx` (`groups_id`),
-  CONSTRAINT `fk_messages_events1` FOREIGN KEY (`events_id`) REFERENCES `events` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  CONSTRAINT `fk_messages_groups1` FOREIGN KEY (`groups_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_messages_events1` FOREIGN KEY (`events_id`) REFERENCES `events` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -189,6 +191,8 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(45) DEFAULT NULL,
   `last_name` varchar(45) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `profile_pic` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -201,7 +205,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Preston','Phan','0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,'Preston','Phan','2015-09-29 11:53:37','2015-09-29 11:53:37'),(3,'Preston','Phan','2015-09-29 11:55:32','2015-09-29 11:55:32'),(4,'Jerry','Applewood','2015-09-29 12:00:42','2015-09-29 12:00:42'),(5,'Jerry','Hansen','2015-09-29 15:40:21','2015-09-29 15:40:21');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -295,4 +298,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-09-30 11:56:28
+-- Dump completed on 2015-10-01 16:11:28

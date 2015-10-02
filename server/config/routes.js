@@ -27,23 +27,30 @@ app
 	.post('/add_interests', function (req, res) {
 		users.addinterests(req, res);
 	})
+	
 	//groups
 	.post('/new_group', function (req, res) {
 		groups.add(req, res);
 	})
 	.get('/show_groups', function (req, res) {
-		console.log('in route');
 		groups.show(req, res);
 	})
 	.get('/find_group/:id', function (req, res) {
 		groups.find(req, res);
+	})
+
+	//events
+	.post('/add_event', function (req, res) {
+		groups.addEvnt(req, res);
+	})
+	.get('/show_events/:id', function (req, res) {
+		groups.showEvents(req, res)
 	})
 	//get a specific user for profile page
 	.get('/user', function(req, res){
 		user.show(req, res);
 	})
 	.post('/new_user', function(req, res){
-		console.log(req.body.picture)
-		// users.add(req, res);
+		users.add(req, res);
 	})
 };
