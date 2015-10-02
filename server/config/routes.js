@@ -34,7 +34,6 @@ module.exports = function (app) {
 		groups.add(req, res);
 	})
 	.get('/show_groups', function (req, res) {
-		console.log('in route');
 		groups.show(req, res);
 	})
 	.get('/find_group/:id', function (req, res) {
@@ -44,6 +43,9 @@ module.exports = function (app) {
 	//events
 	.post('/add_event', function (req, res) {
 		groups.addEvnt(req, res);
+	})
+	.get('/show_events/:id', function (req, res) {
+		groups.showEvents(req, res)
 	})
 	//get a specific user for profile page
 	.get('/user', function(req, res){

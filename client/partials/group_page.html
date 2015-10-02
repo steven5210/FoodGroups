@@ -13,3 +13,10 @@
 <input type="submit" ng:click="grpCtrl.addEvnt(grpCtrl.group.id)">
 </p>
 
+<ul>
+	<li ng:repeat="events in grpCtrl.allEvents">
+		<h2 ng:bind="events.restaurant"></h2>
+		<p ng:bind="events.description"></p>
+	</li>
+</ul>
+

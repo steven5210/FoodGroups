@@ -19,6 +19,11 @@ foodgroups_app.factory('groupsFactory', function ($http) {
 			$http.post('add_event', evnt).then(function (data) {
 				callback(data.data);
 			})
+		},
+		getAllEvents: function (id, callback) {
+			$http.get('show_events/' + id).then(function (data) {
+				callback(data.data);
+			})
 		}
 	}
 })
