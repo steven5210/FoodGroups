@@ -17,6 +17,11 @@ foodgroups_app.controller('groupsController', function(groupsFactory) {
 			getAllGroups();
 		});
 	}
+	this.joinGroup = function(id,profile){
+		groupsFactory.joinGroup({group_id: id, user_id: profile}, function(data){
+			that.group = data;
+		})
+	}
 	that.findGroup = function (id) {
 		groupsFactory.findGroup(id, function (data) {
 			that.group = data;

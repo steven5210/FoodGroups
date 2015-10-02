@@ -17,10 +17,9 @@ module.exports = function (connection) {
 		find: function(req, res){
 			var facebookId = req.params.id;
 			console.log(facebookId);
-			var sql = 'SELECT * FROM users WHERE facebookID = facebook|10104528221459798';
+			var sql = 'SELECT * FROM users WHERE facebookid =  ?';
 			console.log(sql);
-			var query = connection.query(sql, function(err, results){
-				console.log(results);
+			var query = connection.query(sql, facebookId, function(err, results){
 				res.json(results);
 			})
 		},

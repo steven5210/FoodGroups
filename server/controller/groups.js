@@ -25,6 +25,13 @@ module.exports = function (connection) {
 				res.json(results);
 			})
 		},
+		join: function(req, res){
+			var group = req.params;
+			var query = connection.query('INSERT INTO groups_has_users SET ?', group, function (results) {
+				
+			})
+			console.log(query);
+		},
 		addEvnt: function (req, res) {
 			var evnt = req.body;
 			var query = connection.query('INSERT INTO events SET ?', evnt, function (err, results) {

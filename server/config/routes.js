@@ -40,6 +40,10 @@ module.exports = function (app) {
 	.get('/find_group/:id', function (req, res) {
 		groups.find(req, res);
 	})
+	.post('/join_group', function(req, res){
+		console.log(req.body);
+		groups.join(req, res);
+	})
 
 	//events
 	.post('/add_event', function (req, res) {

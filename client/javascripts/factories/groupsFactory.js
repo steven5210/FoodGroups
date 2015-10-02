@@ -10,6 +10,11 @@ foodgroups_app.factory('groupsFactory', function ($http) {
 				callback(data.data);
 			});
 		},
+		joinGroup: function(stuff, callback){
+			$http.post('join_group', stuff).then(function(data){
+				callback(data)
+			})
+		},
 		findGroup: function (id, callback) {
 			$http.get('find_group/' + id).then(function (data) {
 				callback(data.data[0]);

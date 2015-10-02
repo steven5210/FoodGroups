@@ -14,6 +14,7 @@
 			<li ng:repeat="group in grpCtrl.allGroups">
 				<a href="#/group/{{group.id}}" ng:click="grpCtrl.findGroup(group.id)"><h1 ng:bind="group.name"></h1></a>
 				<p ng:bind="group.content"></p>
+				<button class='btn btn-success' ng-click='grpCtrl.joinGroup(group.id, LC.userID)'>Join Group</button>
 			</li>
 		</ul>
 	</div>
