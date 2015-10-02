@@ -3,10 +3,16 @@ foodgroups_app.controller('groupsController', function(groupsFactory) {
 	var getAllGroups = function () {
 		groupsFactory.getAllGroups(function (data) {
 			that.allGroups = data;
-			console.log(that.allGroups);
 		})
 	}
 	getAllGroups();
+
+	var getAllEvents = function (id) {
+		groupsFactory.getAllEvents(id, function (data) {
+			that.allEvents = data;
+			console.log(that.allEvents);
+		})
+	}
 	that.addGroup = function() {
 		groupsFactory.addGroup(that.newGroup, function (data) {
 			getAllGroups();
@@ -15,7 +21,20 @@ foodgroups_app.controller('groupsController', function(groupsFactory) {
 	that.findGroup = function (id) {
 		groupsFactory.findGroup(id, function (data) {
 			that.group = data;
-			console.log(that.group);
+		})
+		getAllEvents(id);
+	}
+	that.addEvnt = function (groupId) {
+		var evnt = {
+			date: that.newGroupEvnt.date,
+			restaurant: that.newGroupEvnt.restaurant,
+			description: that.newGroupEvnt.description,
+			created_at: new Date(),
+			updated_at: new Date(),
+			groups_id: groupId
+		}
+		groupsFactory.addEvent(evnt, function (data) {
+			that.evnt = data;
 		})
 	}
 })
