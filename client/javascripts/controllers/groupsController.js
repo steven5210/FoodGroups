@@ -34,6 +34,8 @@ foodgroups_app.controller('groupsController', function(groupsFactory) {
 		}
 		groupsFactory.addEvent(evnt, function (data) {
 			that.evnt = data;
+			
 		})
+		getAllEvents(evnt.groups_id);
 	}
 })

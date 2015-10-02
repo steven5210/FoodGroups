@@ -10,10 +10,6 @@
 .groups{
 	padding: 10px;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 58981e9f821d24727ca325096720dbac1f752b31
 .regular_profile_pic {
 	width: 10%;
 	padding: 0px;
@@ -21,10 +17,6 @@
 	display: inline-block;
 
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 58981e9f821d24727ca325096720dbac1f752b31
 .event {
 	display: inline-block;
 	vertical-align: top;
@@ -38,17 +30,13 @@
 .scroll_view ul li {
 	list-style-type: none;
 	height: 150px;
-	width: 70vw;
+	width: 60vw;
 	border: 3px solid black;
 	margin-top: 15px;
 	border-radius: 3px;
 }
-
-<<<<<<< HEAD
-=======
 .heading {
 	text-align: center;
 	
 }
 
->>>>>>> 58981e9f821d24727ca325096720dbac1f752b31
