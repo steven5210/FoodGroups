@@ -11,12 +11,13 @@ var connection = mysql.createConnection({
 connection.connect();
 
 var users = require('../controller/users.js')(connection);
-var groups = require('../controller/groups.js')(connection);
-
+var groups = require('../controller/groups.js') (connection);
 
 module.exports = function (app) {
 
+
 	app
+
 	.post('/add_user', function (req, res) {
 		users.add(req, res);
 	})
@@ -50,5 +51,8 @@ module.exports = function (app) {
 	//get a specific user for profile page
 	.get('/user', function(req, res){
 		user.show(req, res);
+	})
+	.post('/new_user', function(req, res){
+		users.add(req, res);
 	})
 };
