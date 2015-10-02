@@ -1,4 +1,4 @@
-foodgroups_app.controller('foodgroupsController', function(foodFactory) {
+foodgroups_app.controller('foodgroupsController', function(foodFactory, $location) {
 
 var that = this;
 this.hide=true;
@@ -23,11 +23,10 @@ this.showinterests=true;
     })
     },
     this.uploaddiets = function(){
-    this.yourdiets.currentuser = that.currentuser
     console.log(this.yourdiets)
     foodFactory.uploaddiets(this.yourdiets, function(data){
     console.log(data);
     })
-    $location.path('/groups')
+    $location.path('/user')
     }
 })
