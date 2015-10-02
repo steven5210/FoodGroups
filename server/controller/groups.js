@@ -20,13 +20,24 @@ module.exports = function (connection) {
 		},
 		find: function(req, res) {
 			var groupId = req.params.id;
-				console.log(groupId);
 			var sql = 'SELECT * FROM groups WHERE id = ' + connection.escape(groupId);
+			connection.query(sql, function (err, results) {
+				res.json(results);
+			})
+		},
+		addEvnt: function (req, res) {
+			var evnt = req.body;
+			var query = connection.query('INSERT INTO events SET ?', evnt, function (err, results) {
+
+			})
+		},
+		showEvents: function (req, res) {
+			var groupId = req.params.id;
+			var sql = 'SELECT * FROM events WHERE groups_id = ' + connection.escape(groupId);
 			console.log(sql);
 			connection.query(sql, function (err, results) {
-				res.send(results);
+				res.json(results);
 			})
 		}
-
 	}
 };

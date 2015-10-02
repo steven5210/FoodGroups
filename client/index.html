@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" ng:app="foodgroups_app">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<title>Food Groups</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Food Groups</title>
 
-  <!--Angular-->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.js"></script>
-  <!--Google Maps-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTFbAShs-Vid1qTYfGxXzJgMJAVHM8vMs&libraries=places"></script>
+<!--Angular-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.js"></script>
+<!--Google Maps-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTFbAShs-Vid1qTYfGxXzJgMJAVHM8vMs&libraries=places"></script>
+
+
+<!--Bootstrap-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+
 <!-- **** Auth0 for login -->
-  <!-- We use client cookies to save the user credentials -->
+<!-- We use client cookies to save the user credentials -->
 <script src="//code.angularjs.org/1.2.16/angular-cookies.min.js"></script>
 
 <!-- Auth0 Lock script and AngularJS module -->
@@ -25,34 +31,35 @@
 
 <script src="//cdn.auth0.com/w2/auth0-angular-4.js"> </script>
 
-  <!-- Setting the right viewport -->
+<!-- Setting the right viewport -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <!-- *** end of auth0 -->
-  <!--App Module-->
-	<script src="./javascripts/scripts.js"></script>
 
-  <!--factories-->
-	<script src="./javascripts/factories/foodFactory.js"></script>
-  <script src="./javascripts/factories/groupsFactory.js"></script>
-  <script src='./javascripts/factories/userFactory.js'></script>
+<!--App Module-->
+<script src="./javascripts/scripts.js"></script>
 
-  <!--controllers-->
-	<script src="./javascripts/controllers/foodController.js"></script>
-  <script src="./javascripts/controllers/groupsController.js"></script>
-  <script src='./javascripts/controllers/userController.js'></script>
-  <script src='./javascripts/controllers/loginController.js'></script>
-  <!--JQuery-->
-	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'>
-      </script>
-  <!--Bootstrap-->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <!--Css-->
-  <link rel="stylesheet" href="/stylesheets/style.css">
+<!--factories-->
+<script src="./javascripts/factories/foodFactory.js"></script>
+<script src="./javascripts/factories/groupsFactory.js"></script>
+<script src='./javascripts/factories/userFactory.js'></script>
+
+<!--controllers-->
+<script src="./javascripts/controllers/foodController.js"></script>
+<script src="./javascripts/controllers/groupsController.js"></script>
+<script src='./javascripts/controllers/userController.js'></script>
+<script src='./javascripts/controllers/loginController.js'></script>
+<!--JQuery-->
+<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'>
+    </script>
+<!--Bootstrap-->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<!--Css-->
+<link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
   <!-- Login controller starts here -->
 <div ng-controller='loginController as LC'>
-	      <nav class="navbar navbar-inverse navbar-fixed-top">
+	   <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
 
@@ -77,10 +84,13 @@
               <button class='btn btn-danger' ng-click='LC.logout()' value='Log out'>Log Out</button>
           </form>
         </div><!--/.navbar-collapse -->
-    </nav>
-
-	<div ng:view></div>
+      </nav> 
+  <div ng:controller="groupsController as grpCtrl">
+    <div ng:view></div>
+	</div>
+  
   <!-- End of login controller -->
 </div>
+
 </body>
 </html>

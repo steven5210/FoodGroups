@@ -14,6 +14,10 @@ module.exports = function (connection) {
 				res.send(results)
 			});
 		},
+		find: function(req, res){
+			var facebookId = req.body.user_id;
+			var sql = 'SELECT * FROM users WHERE facebook_id = ' 
+		}
 		addinterests: function (req, res) {
 			console.log("came to model");
 			console.log(req.body);
