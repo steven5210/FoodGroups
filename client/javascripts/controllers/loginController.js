@@ -1,4 +1,4 @@
-foodgroups_app.controller('loginController', function($http, auth, store, $location) {
+foodgroups_app.controller('loginController', function(userFactory, $http, auth, store, $location) {
 	this.auth = auth;
 
 	this.login = function(){
@@ -6,6 +6,8 @@ foodgroups_app.controller('loginController', function($http, auth, store, $locat
 			//success callback
 			store.set('profile', profile);
 			store.set('token', token);
+			userFactory.addUser(profile, function (data){
+			})
 			$location.path('/user');
 		}, function(){
 			//Error callback

@@ -11,18 +11,17 @@ var connection = mysql.createConnection({
 connection.connect();
 
 var users = require('../controller/users.js')(connection);
-var user = require('../controller/user.js')(connection);
 var groups = require('../controller/groups.js') (connection);
 
 module.exports = function (app) {
-
-	app.post('/add_user', function (req, res) {
+app
+	.post('/add_user', function (req, res) {
 		users.add(req, res);
 	})
-	app.post('/add_interests', function (req, res) {
+	.post('/add_interests', function (req, res) {
 		users.addinterests(req, res);
 	})
-	app.post('/add_diets', function (req, res) {
+	.post('/add_diets', function (req, res) {
 		users.adddiets(req, res);
 	})
 	.post('/add_interests', function (req, res) {
@@ -42,5 +41,9 @@ module.exports = function (app) {
 	//get a specific user for profile page
 	.get('/user', function(req, res){
 		user.show(req, res);
+	})
+	.post('/new_user', function(req, res){
+		console.log(req.body.picture)
+		// users.add(req, res);
 	})
 };
