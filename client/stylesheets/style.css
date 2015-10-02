@@ -13,8 +13,25 @@ body {
 .groups{
 	padding: 10px;
 }
+<<<<<<< HEAD
 .regular_profile_pic {
 	width: 10%;
 	padding: 0px;
 	margin: 0px;
 }
+=======
+.event {
+	display: inline-block;
+	vertical-align: top;
+}
+.scroll_view {
+	display: inline-block;
+	overflow: scroll;
+}
+.scroll_view ul li {
+	list-style-type: none;
+	height: 150px;
+	width: 900px;
+	border: 3px solid black;
+}
+>>>>>>> 8fb6256efc1dbab5dc616df9806b11f296a98d5d

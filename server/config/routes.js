@@ -14,7 +14,10 @@ var users = require('../controller/users.js')(connection);
 var groups = require('../controller/groups.js') (connection);
 
 module.exports = function (app) {
-app
+
+
+	app
+
 	.post('/add_user', function (req, res) {
 		users.add(req, res);
 	})
@@ -27,7 +30,6 @@ app
 	.post('/add_interests', function (req, res) {
 		users.addinterests(req, res);
 	})
-	
 	//groups
 	.post('/new_group', function (req, res) {
 		groups.add(req, res);
