@@ -12,6 +12,12 @@
   "dependencies": {
     "body-parser": "^1.14.0",
     "express": "^4.13.3",
-    "mysql": "^2.9.0"
+    "formidable": "^1.0.17",
+    "fs-extra": "^0.24.0",
+    "multer": "^1.0.5",
+    "mysql": "^2.9.0",
+    "ng-file-upload": "^8.0.6",
+    "quickthumb": "0.0.11",
+    "util": "^0.10.3"
   }
 }

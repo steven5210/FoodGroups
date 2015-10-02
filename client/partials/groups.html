@@ -1,5 +1,5 @@
 
-	<h1>Hello food groups</h1>
+<div class="event">
 	<h1>Create a group</h1>
 	<p>
 		<input type="text" ng:model="grpCtrl.newGroup.name" placeholder="name">
@@ -8,10 +8,12 @@
 	<p>
 		<input type="submit" ng:click="grpCtrl.addGroup()">
 	</p>
+</div>
+<div class="scroll_view">
 	<ul>
 		<li ng:repeat="group in grpCtrl.allGroups">
 			<a href="#/group/{{group.id}}" ng:click="grpCtrl.findGroup(group.id)"><h1 ng:bind="group.name"></h1></a>
 			<p ng:bind="group.content"></p>
 		</li>
 	</ul>
-
+</div>

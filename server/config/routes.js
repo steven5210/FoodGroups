@@ -16,19 +16,19 @@ var groups = require('../controller/groups.js')(connection);
 
 module.exports = function (app) {
 
-	app.post('/add_user', function (req, res) {
+	app
+	.post('/add_user', function (req, res) {
 		users.add(req, res);
 	})
-	app.post('/add_interests', function (req, res) {
+	.post('/add_interests', function (req, res) {
 		users.addinterests(req, res);
 	})
-	app.post('/add_diets', function (req, res) {
+	.post('/add_diets', function (req, res) {
 		users.adddiets(req, res);
 	})
 	.post('/add_interests', function (req, res) {
 		users.addinterests(req, res);
 	})
-	
 	//groups
 	.post('/new_group', function (req, res) {
 		groups.add(req, res);

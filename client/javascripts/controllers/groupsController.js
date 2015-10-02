@@ -10,7 +10,6 @@ foodgroups_app.controller('groupsController', function(groupsFactory) {
 	var getAllEvents = function (id) {
 		groupsFactory.getAllEvents(id, function (data) {
 			that.allEvents = data;
-			console.log(that.allEvents);
 		})
 	}
 	that.addGroup = function() {
