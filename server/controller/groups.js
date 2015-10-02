@@ -34,7 +34,6 @@ module.exports = function (connection) {
 		showEvents: function (req, res) {
 			var groupId = req.params.id;
 			var sql = 'SELECT * FROM events WHERE groups_id = ' + connection.escape(groupId);
-			console.log(sql);
 			connection.query(sql, function (err, results) {
 				res.json(results);
 			})

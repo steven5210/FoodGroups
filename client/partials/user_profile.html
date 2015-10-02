@@ -1,34 +1,37 @@
 <div class='jumbotron'>
-	<h4>{{LC.auth.profile.given_name}}'s Profile <img class='small_profile_pic' src='{{LC.auth.profile.picture}}'></h4>
+	<div class='profile'>
+		<div class='heading'>
+			<h4>{{LC.auth.profile.given_name}}'s Profile <img class='small_profile_pic' src='{{LC.auth.profile.picture}}'></h4>
+		</div>
+		<div class='groups'>
+			<h2>Your Current Groups</h2>
+			<ul class='list-unstyled'>
+				<li>Cheese Lovers<img class='small_profile_pic'src="http://www.i-mockery.com/visionary/pics/cheese-pic1.jpg"></li>
+				<li>Chipotle<img class='small_profile_pic' src="http://static1.squarespace.com/static/536703e7e4b03af4b79eaaaf/t/53a24f5ae4b01c7e0c0511d5/1403146075814/logo-chipotle.png?format=500w"></li>
+			</ul>
+		</div>
 
-	<div class='groups'>
-		<h5>Your Current Groups</h5>
-		<ul class='list-unstyled'>
-			<li>Cheese Lovers<img class='small_profile_pic'src="http://www.i-mockery.com/visionary/pics/cheese-pic1.jpg"></li>
-			<li>Chipotle<img class='small_profile_pic' src="http://static1.squarespace.com/static/536703e7e4b03af4b79eaaaf/t/53a24f5ae4b01c7e0c0511d5/1403146075814/logo-chipotle.png?format=500w"></li>
-		</ul>
-	</div>
+		<div class='events'>
+			<h2>Your Upcoming Events</h2>
+			<ul class='list-unstyled'>
+				<li>Lunch at My House is on Fire Burgers</li>
+			</ul>
+		</div>
 
-	<div class='events'>
-		<h5>Your Upcoming Events</h5>
-		<ul class='list-unstyled'>
-			<li>Lunch at My House is on Fire Burgers</li>
-		</ul>
-	</div>
+		<div class='user_info'>
+			 <h3>About</h3>
 
-	<div class='user_info'>
-		 <h5>About</h5>
-		 <ul>
-		 	<li class='list-unstyled'><h5>Interests</h5></li>
-		 	<li>Chips <input type='text' ng-if='showEdit' ng-model='edit_interest'></li>
-		 	<li>Oreos <input type='text' ng-if='showEdit'></li>
-		 	<li class='list-unstyled'><h5>Diet</h5></li>
-		 	<li>Gluten <input type='text' ng-if='showEdit' ng-model='edit_diet()'></li>
-		 	<li>Free Roaming <input type='text' ng-if='showEdit'></li>
-		 	<li>Organic <input type='text' ng-if='showEdit'></li>
-		 	<li class='list-unstyled'><button ng-if='showEdit' ng-click='UC.updateEdit()'>Submit Updates</button></li>
-		 	<li class='list-unstyled'><button class='btn btn-success' ng-model='showEdit' ng-click='showEdit=true'>Edit</button></li>
-		 </ul>
+			 	<li class='list-unstyled'><h4>Interests</h4></li>
+			 	<li>Chips <input type='text' ng-if='showEdit' ng-model='edit_interest'></li>
+			 	<li>Oreos <input type='text' ng-if='showEdit'></li>
+			 	<li class='list-unstyled'><h4>Diet</h4></li>
+			 	<li>Gluten <input type='text' ng-if='showEdit' ng-model='edit_diet()'></li>
+			 	<li>Free Roaming <input type='text' ng-if='showEdit'></li>
+			 	<li>Organic <input type='text' ng-if='showEdit'></li>
+			 	<li class='list-unstyled'><button class='btn btn-danger' ng-if='showEdit' ng-click='UC.updateEdit()'>Submit Updates</button></li>
+			 	<li class='list-unstyled'><button class='btn btn-success' ng-model='showEdit' ng-click='showEdit=true'>Edit</button></li>
 
+
+		</div>
 	</div>
 </div>

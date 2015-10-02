@@ -29,7 +29,7 @@
 		<li ng:repeat="events in grpCtrl.allEvents | filter: filter_name | orderBy: -'events.created_at'">
 			<h2 ng:bind="events.restaurant"></h2>
 			<p ng:bind="events.description"></p>
-			<p ng:bind="events.created_at"></p>
+			<p ng:bind="events.created_at |date:MM/DD/YYYY"></p>
 		</li>
 	</ul>
 </div>
